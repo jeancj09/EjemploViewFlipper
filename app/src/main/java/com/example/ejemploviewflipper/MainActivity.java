@@ -11,38 +11,35 @@ import android.widget.TextView;
 import android.widget.ViewFlipper;
 
 public class MainActivity extends AppCompatActivity {
-private ViewFlipper viewFlipper;
-Button btnmap;
+    private ViewFlipper viewFlipper;
+    public Button btAnterior, btSiguiente;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        btnmap=findViewById(R.id.btnmap);
-        viewFlipper=findViewById(R.id.view_flipper);
-        TextView textView=new TextView(this);
-        textView.setText("Panamá");
-        textView.setGravity(Gravity.CENTER);
+        viewFlipper = findViewById(R.id.view_flipper);
+        btAnterior = findViewById(R.id.bttAnterior);
+        btSiguiente = findViewById(R.id.bttSiguiente);
 
-        viewFlipper.addView(textView);
-        viewFlipper.setFlipInterval(2000);
-        viewFlipper.startFlipping();
-btnmap.setOnClickListener(new View.OnClickListener() {
-    @Override
-    public void onClick(View view) {
-Intent intent=new Intent(getApplicationContext(),Mapa.class);
-startActivity(intent);
-    }
-});
-    }
-    public void previousView(View v){
-        viewFlipper.setInAnimation(this, R.anim.slide_in_right);
-        viewFlipper.setInAnimation(this, R.anim.slide_out_left);
-viewFlipper.showPrevious();
-    }
-    public void nextView(View v){
-        viewFlipper.setInAnimation(this, android.R.anim.slide_in_left);
-        viewFlipper.setInAnimation(this, android.R.anim.slide_out_right);
-        viewFlipper.showNext();
+        btAnterior.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                viewFlipper.setInAnimation(getApplicationContext(), R.anim.slide_in_right);
+                viewFlipper.setInAnimation(getApplicationContext(), R.anim.slide_out_left);
+                viewFlipper.showPrevious();
+            }
+        });
+
+        btSiguiente.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                viewFlipper.setInAnimation(getApplicationContext(), android.R.anim.slide_in_left);
+                viewFlipper.setInAnimation(getApplicationContext(), android.R.anim.slide_out_right);
+                viewFlipper.showNext();
+
+            }
+        });
 
     }
 }

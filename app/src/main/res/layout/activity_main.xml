@@ -5,57 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-
-<ViewFlipper
-    android:id="@+id/view_flipper"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:inAnimation="@android:anim/slide_in_left"
-    android:outAnimation="@android:anim/slide_out_right"
-    >
-
     <Button
-        android:id="@+id/btnmap"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:backgroundTint="#d62e2e"
-        android:text="Mapa"></Button>
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/bandera_de_panam__03"
-        android:layout_gravity="center"
-        >
-    </ImageView>
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_gravity="center"
-        >
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Ejemplo"
-            android:textSize="20sp">
-        </TextView>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="de"
-            android:textSize="20sp">
-        </TextView>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="ViewFlipper"
-            android:textSize="20sp">
-        </TextView>
-    </LinearLayout>
-</ViewFlipper>
-
-    <Button
+        android:id="@+id/bttAnterior"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -64,11 +15,10 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
-        android:backgroundTint="#d62e2e"
-        android:onClick="previousView"
-        android:text="Anterior"></Button>
+        android:text="Anterior"/>
 
     <Button
+        android:id="@+id/bttSiguiente"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
@@ -77,7 +27,45 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
-        android:backgroundTint="#d62e2e"
-        android:onClick="nextView"
-        android:text="Siguiente"></Button>
+        android:text="Siguiente"/>
+
+    <ViewFlipper
+        android:id="@+id/view_flipper"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:inAnimation="@android:anim/slide_in_left"
+        android:outAnimation="@android:anim/slide_out_right">
+
+        <ImageView
+            android:src="@drawable/bandera_de_panam__03"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:layout_gravity="center"/>
+
+        <ImageView
+            android:src="@drawable/map"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:layout_gravity="center"/>
+
+        <ImageView
+            android:src="@drawable/panamacanal"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:layout_gravity="center"/>
+
+        <ImageView
+            android:src="@drawable/panamaviejo"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:layout_gravity="center"/>
+
+        <ImageView
+            android:src="@drawable/panamapollera"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:layout_gravity="center"/>
+    </ViewFlipper>
+
+
 </RelativeLayout>
